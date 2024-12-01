@@ -17,7 +17,17 @@
 - 🖼️ Dibujo progresivo del ahorcado con 7 fases.
 - 🔄 Opción de jugar varias veces con un nuevo animal.
 - 🔤 Validación de entradas para garantizar que solo se ingrese una letra válida.
-- 🎲 Python v.3.11.3 
+- 🎲 Python v.3.11.3
+
+## Arquitectura del proyecto
+```
+ahorcado/
+├── ahorcado.py          # Tu código fuente de Python
+├── dist/
+│   └── ahorcado.exe     # El archivo ejecutable
+├── build/               # Archivos temporales de PyInstaller
+└── ahorcado.spec        # Especificaciones del proyecto
+```
 
 ## Requisitos del Sistema 🖥️
 
