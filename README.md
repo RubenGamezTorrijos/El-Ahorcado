@@ -1,5 +1,3 @@
-# python-juego-el-ahorcado
-
 # El Ahorcado 🧑‍🏫🧩
 
 ¡Bienvenido al juego clásico de "El Ahorcado"! Adivina la palabra secreta antes de que el ahorcado complete su dibujo. Este juego es simple, entretenido y perfecto para poner a prueba tu conocimiento de animales.
