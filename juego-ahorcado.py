@@ -60,19 +60,19 @@ def jugar_ahorcado():
     while True:
         print(dibujo[len(letras_erroneas)])
         print(' '.join(letras_adivinadas))
-        letra = input('Ingrese una letra: ').lower()
+        letra = input('¿Qué animal es? Elige una letra: ').lower()
         if letra in palabra:
             for i in range(len(palabra)):
                 if palabra[i] == letra:
                     letras_adivinadas[i] = letra
             if '_' not in letras_adivinadas:
-                print('¡Felicidades! Has adivinado la palabra')
+                print('¡Felicidades! Has adivinado el animal')
                 break
         else:
             letras_erroneas.append(letra)
             if len(letras_erroneas) == len(dibujo):
                 print(dibujo[-1])
-                print('Has perdido. La palabra era', palabra)
+                print('Has perdido. La palabra del animal era', palabra)
                 break
 
     opcion = input('¿Quieres jugar de nuevo? (S/N)').lower()
