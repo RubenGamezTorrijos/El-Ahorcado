@@ -60,3 +60,4 @@ Sigue estos pasos para jugar el juego en tu máquina:
 
 ## Ejemplo de Juego 🕹️
 
+![image](https://github.com/user-attachments/assets/f4fbe1b6-3738-4bcf-b1da-cf387ee34336)
