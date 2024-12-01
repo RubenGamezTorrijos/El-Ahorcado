@@ -1,82 +1,121 @@
 import random
 
-palabras = ['perro', 'gato', 'elefante', 'jirafa', 'rinoceronte', 'cocodrilo', 'leon', 'tigre', 'mono', 'cebra']
-
-def jugar_ahorcado():
-    palabra = random.choice(palabras)
-    letras_adivinadas = ['_'] * len(palabra)
-    letras_erroneas = []
-    dibujo = ['''
+class Ahorcado:
+    def __init__(self):
+        self.palabras = ['perro', 'gato', 'elefante', 'jirafa', 'rinoceronte', 'cocodrilo', 'leon', 'tigre', 'mono', 'cebra']
+        self.dibujo = [
+            '''
   +---+
   |   |
       |
       |
       |
       |
-=========''','''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========''','''
+=========''',
+            '''
   +---+
   |   |
   O   |
+      |
+      |
+      |
+=========''',
+            '''
+  +---+
+  |   |
+  O   |
   |   |
       |
       |
-=========''','''
+=========''',
+            '''
   +---+
   |   |
   O   |
  /|   |
       |
       |
-=========''','''
+=========''',
+            '''
   +---+
   |   |
   O   |
  /|\  |
       |
       |
-=========''','''
+=========''',
+            '''
   +---+
   |   |
   O   |
  /|\  |
  /    |
       |
-=========''','''
+=========''',
+            '''
   +---+
   |   |
   O   |
  /|\  |
  / \  |
       |
-=========''']
+========='''
+        ]
+        self.palabra = ""
+        self.letras_adivinadas = []
+        self.letras_erroneas = []
 
-    while True:
-        print(dibujo[len(letras_erroneas)])
-        print(' '.join(letras_adivinadas))
-        letra = input('¿Qué animal es? Elige una letra: ').lower()
-        if letra in palabra:
-            for i in range(len(palabra)):
-                if palabra[i] == letra:
-                    letras_adivinadas[i] = letra
-            if '_' not in letras_adivinadas:
-                print('¡Felicidades! Has adivinado el animal')
-                break
-        else:
-            letras_erroneas.append(letra)
-            if len(letras_erroneas) == len(dibujo):
-                print(dibujo[-1])
-                print('Has perdido. La palabra del animal era', palabra)
-                break
+    def iniciar_juego(self):
+        self.palabra = random.choice(self.palabras)
+        self.letras_adivinadas = ['_'] * len(self.palabra)
+        self.letras_erroneas = []
 
-    opcion = input('¿Quieres jugar de nuevo? (S/N)').lower()
-    if opcion == 's':
-        jugar_ahorcado()
+        print("¡Bienvenido al juego del Ahorcado!")
+        self.jugar()
 
-jugar_ahorcado()
+    def jugar(self):
+        while True:
+            self.mostrar_estado()
+            letra = self.obtener_input()
+            if letra in self.palabra:
+                self.actualizar_letras_adivinadas(letra)
+                if '_' not in self.letras_adivinadas:
+                    print(f"¡Felicidades! Has adivinado el animal: {self.palabra}")
+                    break
+            else:
+                self.letras_erroneas.append(letra)
+                if len(self.letras_erroneas) == len(self.dibujo):
+                    self.mostrar_estado()
+                    print(f"Has perdido. La palabra del animal era {self.palabra}")
+                    break
+        self.pedir_reiniciar()
+
+    def mostrar_estado(self):
+        print(self.dibujo[len(self.letras_erroneas)])
+        print(' '.join(self.letras_adivinadas))
+
+    def obtener_input(self):
+        while True:
+            letra = input('¿Qué animal es? Elige una letra: ').lower()
+            if letra.isalpha() and len(letra) == 1:
+                if letra not in self.letras_erroneas and letra not in self.letras_adivinadas:
+                    return letra
+                else:
+                    print("Ya has adivinado esa letra o la has intentado incorrectamente.")
+            else:
+                print("Por favor, ingresa una letra válida.")
+
+    def actualizar_letras_adivinadas(self, letra):
+        for i in range(len(self.palabra)):
+            if self.palabra[i] == letra:
+                self.letras_adivinadas[i] = letra
+
+    def pedir_reiniciar(self):
+        opcion = input('¿Quieres jugar de nuevo? (S/N): ').lower()
+        if opcion == 's':
+            self.iniciar_juego()
+
+# Crear instancia y comenzar el juego
+juego = Ahorcado()
+juego.iniciar_juego()
+
