@@ -68,12 +68,17 @@ class Ahorcado:
         self.estadisticas = {"Ganadas": 0, "Perdidas": 0}
 
     def iniciar_juego(self):
-        self.palabra = random.choice(self.palabras)
-        self.letras_adivinadas = ['_'] * len(self.palabra)
-        self.letras_erroneas = []
+        while True:
+            self.palabra = random.choice(self.palabras)
+            self.letras_adivinadas = ['_'] * len(self.palabra)
+            self.letras_erroneas = []
 
-        print("¡Bienvenido al juego del Ahorcado!")
-        self.jugar()
+            print("\n¡Bienvenido al juego del Ahorcado!")
+            self.jugar()
+
+            if not self.pedir_reiniciar():
+                print("¡Gracias por jugar! ¡Hasta pronto!")
+                break
 
     def jugar(self):
         while True:
@@ -94,7 +99,6 @@ class Ahorcado:
                     break
 
         self.mostrar_estadisticas()
-        self.pedir_reiniciar()
 
     def mostrar_estado(self):
         print(self.dibujo[len(self.letras_erroneas)])
@@ -117,13 +121,6 @@ class Ahorcado:
             if self.palabra[i] == letra:
                 self.letras_adivinadas[i] = letra
 
-    def pedir_reiniciar(self):
-        opcion = input('¿Quieres jugar de nuevo? (S/N): ').lower()
-        if opcion == 's':
-            self.iniciar_juego()
-        else:
-            print("¡Gracias por jugar!")
-
     def mostrar_estadisticas(self):
         """Muestra un gráfico circular con las estadísticas de victorias y derrotas."""
         etiquetas = list(self.estadisticas.keys())
@@ -137,7 +134,16 @@ class Ahorcado:
         plt.title("Estadísticas de Juego: Ganadas vs Perdidas")
         plt.show()
 
+    def pedir_reiniciar(self):
+        while True:
+            opcion = input('¿Quieres jugar de nuevo? (S/N): ').lower()
+            if opcion == 's':
+                return True
+            elif opcion == 'n':
+                return False
+            else:
+                print("Por favor, ingresa 'S' para sí o 'N' para no.")
+
 # Crear instancia y comenzar el juego
 juego = Ahorcado()
 juego.iniciar_juego()
-
