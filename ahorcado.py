@@ -1,4 +1,5 @@
 import random
+import matplotlib.pyplot as plt
 
 class Ahorcado:
     def __init__(self):
@@ -64,6 +65,7 @@ class Ahorcado:
         self.palabra = ""
         self.letras_adivinadas = []
         self.letras_erroneas = []
+        self.estadisticas = {"Ganadas": 0, "Perdidas": 0}
 
     def iniciar_juego(self):
         self.palabra = random.choice(self.palabras)
@@ -81,18 +83,23 @@ class Ahorcado:
                 self.actualizar_letras_adivinadas(letra)
                 if '_' not in self.letras_adivinadas:
                     print(f"¡Felicidades! Has adivinado el animal: {self.palabra}")
+                    self.estadisticas["Ganadas"] += 1
                     break
             else:
                 self.letras_erroneas.append(letra)
-                if len(self.letras_erroneas) == len(self.dibujo):
+                if len(self.letras_erroneas) == len(self.dibujo) - 1:
                     self.mostrar_estado()
                     print(f"Has perdido. La palabra del animal era {self.palabra}")
+                    self.estadisticas["Perdidas"] += 1
                     break
+
+        self.mostrar_estadisticas()
         self.pedir_reiniciar()
 
     def mostrar_estado(self):
         print(self.dibujo[len(self.letras_erroneas)])
         print(' '.join(self.letras_adivinadas))
+        print(f"Letras incorrectas: {', '.join(self.letras_erroneas)}")
 
     def obtener_input(self):
         while True:
@@ -114,6 +121,21 @@ class Ahorcado:
         opcion = input('¿Quieres jugar de nuevo? (S/N): ').lower()
         if opcion == 's':
             self.iniciar_juego()
+        else:
+            print("¡Gracias por jugar!")
+
+    def mostrar_estadisticas(self):
+        """Muestra un gráfico circular con las estadísticas de victorias y derrotas."""
+        etiquetas = list(self.estadisticas.keys())
+        valores = list(self.estadisticas.values())
+        colores = ['#4CAF50', '#F44336']  # Verde para ganadas, rojo para perdidas
+        explode = (0.1, 0)  # Resalta el primer sector (Ganadas)
+
+        print(f"\nEstadísticas actuales:\nGanadas: {self.estadisticas['Ganadas']}\nPerdidas: {self.estadisticas['Perdidas']}\n")
+        plt.figure(figsize=(6, 6))
+        plt.pie(valores, labels=etiquetas, autopct='%1.1f%%', startangle=90, colors=colores, explode=explode)
+        plt.title("Estadísticas de Juego: Ganadas vs Perdidas")
+        plt.show()
 
 # Crear instancia y comenzar el juego
 juego = Ahorcado()
