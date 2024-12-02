@@ -70,4 +70,4 @@ Sigue estos pasos para jugar el juego en tu máquina:
 
 | Juego entorno usuario |
 |:-----------------------:|
-|![image](https://github.com/user-attachments/assets/c3c32056-2fa3-4864-99bc-57e9e59fccab)|
+|![image](https://github.com/user-attachments/assets/237ac6df-20fd-4142-a20b-1ef2b5c2b147)|
