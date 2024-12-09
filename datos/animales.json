@@ -1,0 +1,14 @@
+{
+  "animales": [
+    "abeja", "acantilado", "aguila", "albatros", "alce", "anguila", "antílope", "araña", "ardilla", "armadillo",
+    "asno", "atún", "avestruz", "ballena", "bisonte", "búfalo", "burro", "cabra", "cangrejo", "canguro",
+    "cardenal", "caracol", "carnicero", "castor", "cebra", "cerca", "chimpancé", "cicada", "ciervo", "cigüeña",
+    "cocodrilo", "colibrí", "comadreja", "cornejo", "corral", "cuervo", "delfín", "dragón", "elefante", "erizo",
+    "flamenco", "gallo", "ganso", "gato", "gaviota", "gazela", "gecko", "giraffe", "golondrina", "gorila",
+    "grillo", "halcón", "hipopótamo", "hipótesis", "iguana", "lago", "león", "lince", "loro", "luciérnaga", 
+    "macaco", "mantarraya", "mapache", "mariposa", "meerkat", "mono", "morsa", "murciélago", "nutria",
+    "ocelote", "oso", "otter", "pájaro", "pantera", "pavo", "peces", "pelícano", "perico", "perro", 
+    "pescado", "pingüino", "piraña", "puma", "rata", "raven", "rinoceronte", "sapo", "serpiente", "squirrel",
+    "tigre", "tortuga", "tucán", "vaca", "vicuña", "zebra"
+  ]
+}
