@@ -1,9 +1,14 @@
 import random
 import matplotlib.pyplot as plt
+import json  # Importamos la librería json
 
 class Ahorcado:
     def __init__(self):
-        self.palabras = ['perro', 'gato', 'elefante', 'jirafa', 'rinoceronte', 'cocodrilo', 'leon', 'tigre', 'mono', 'cebra']
+        # Cargar los animales desde el archivo JSON
+        with open('/datos/animales.json', 'r') as archivo:
+            data = json.load(archivo)
+            self.palabras = data["animales"]  # Cargar la lista de animales
+        
         self.dibujo = [
             '''
   +---+
@@ -60,7 +65,7 @@ class Ahorcado:
  /|\  |
  / \  |
       |
-========='''
+=========''' 
         ]
         self.palabra = ""
         self.letras_adivinadas = []
