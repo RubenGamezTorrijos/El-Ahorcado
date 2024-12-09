@@ -22,11 +22,18 @@
 ## Arquitectura del proyecto
 ```
 ahorcado/
-├── ahorcado.py          # Tu código fuente de Python
-├── dist/
-│   └── ahorcado.exe     # El archivo ejecutable
-├── build/               # Archivos temporales de PyInstaller
-└── ahorcado.spec        # Especificaciones del proyecto
+│
+├── datos/
+│   └── animales.json        # Listado de animales.
+│
+├── app/
+│   ├── __init__.py          # Inicialización del paquete de la aplicación.
+│   ├── ahorcado.py          # Lógica del juego del ahorcado.
+│   ├── estadisticas.py      # Lógica de estadísticas y gráficos.
+│   ├── palabras.py          # Carga de las palabras desde el archivo JSON.
+│   └── dibujo.py            # Representación del ahorcado (dibujo).
+│
+└── main.py                  # Archivo principal para ejecutar el juego.
 ```
 
 ## Requisitos del Sistema 🖥️
