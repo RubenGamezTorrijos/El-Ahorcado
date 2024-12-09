@@ -52,7 +52,7 @@ Sigue estos pasos para jugar el juego en tu máquina:
 1. Clona este repositorio en tu máquina local utilizando Git:
 
     ```bash
-    git clone https://github.com/tuusuario/ahorcado.git
+    git clone https://github.com/RubenGamezTorrijos/El-Ahorcado.git
     ```
 
 2. Accede a la carpeta del proyecto:
