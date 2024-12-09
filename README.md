@@ -1,8 +1,8 @@
-# El Ahorcado 🧑‍🏫🧩
+# 🧩 El Ahorcado 🧑‍🏫
 
 ¡Bienvenido al juego clásico de "El Ahorcado"! Adivina la palabra secreta antes de que el ahorcado complete su dibujo. Este juego es simple, entretenido y perfecto para poner a prueba tu conocimiento de animales.
 
-## Cómo Jugar 🎮
+## 🎮 Cómo Jugar 
 
 1. **Inicio del juego**: Al iniciar, el juego elegirá una palabra aleatoria relacionada con animales.
 2. **Seleccionar letras**: Adivina una letra a la vez. Si la letra está en la palabra, aparecerá en su lugar correspondiente.
@@ -11,7 +11,7 @@
    - **Victoria**: Si adivinas todas las letras de la palabra antes de que se complete el dibujo del ahorcado, ¡ganas!
    - **Derrota**: Si cometes demasiados errores, perderás el juego.
 
-## Características 📝
+## 📝 Características 
 
 - 🎲 Palabras aleatorias relacionadas con animales.
 - 🖼️ Dibujo progresivo del ahorcado con 7 fases.
@@ -19,7 +19,7 @@
 - 🔤 Validación de entradas para garantizar que solo se ingrese una letra válida.
 - 🎲 Python v.3.11.3
 
-## Arquitectura del proyecto
+## 🗂️ Arquitectura del proyecto
 ```
 ahorcado/
 │
@@ -36,13 +36,13 @@ ahorcado/
 └── main.py                  # Archivo principal para ejecutar el juego.
 ```
 
-## Requisitos del Sistema 🖥️
+## 🖥️ Requisitos del Sistema 
 
 Este juego está desarrollado en Python y no requiere dependencias externas.
 
 - **Python 3.8 o superior**.
 
-## Instalación 🔧
+## 🔧 Instalación
 
 Sigue estos pasos para jugar el juego en tu máquina:
 
@@ -62,13 +62,13 @@ Sigue estos pasos para jugar el juego en tu máquina:
 
 3. Si no tienes Python instalado, puedes descargarlo desde [python.org](https://www.python.org/downloads/).
 
-### Ejecutar el Juego
+### 🚀 Ejecutar el Juego
 
 1. Navega a la carpeta donde has clonado el proyecto.
 2. Ejecuta el juego con el siguiente comando:
 
     ```bash
-    python ahorcado.py
+    python main.py
     ```
 
 3. ¡El juego comenzará y podrás empezar a adivinar!
