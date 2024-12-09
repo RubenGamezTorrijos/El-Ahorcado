@@ -33,6 +33,7 @@ ahorcado/
 │   ├── palabras.py          # Carga de las palabras desde el archivo JSON.
 │   └── dibujo.py            # Representación del ahorcado (dibujo).
 │
+├── requirements.txt         # Dependencias del proyecto.
 └── main.py                  # Archivo principal para ejecutar el juego.
 ```
 
