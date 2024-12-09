@@ -69,7 +69,20 @@ Sigue estos pasos para jugar el juego en tu máquina:
 2. Ejecuta el juego con el siguiente comando:
 
     ```bash
-    python main.py
+    # Crear un entorno virtual
+    python -m venv venv
+
+    # Activar el entorno (en Windows)
+    venv\Scripts\activate
+
+    #Activar el entorno (en MacOS/Linux)
+    source venv/bin/activate
+    
+    ```
+3. Una vez activado el entorno virtual, puedes instalar las dependencias con el comando:
+
+   ```bash
+    pip install -r requirements.txt
     ```
 
 3. ¡El juego comenzará y podrás empezar a adivinar!
